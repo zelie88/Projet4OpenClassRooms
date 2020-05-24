@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Billet simple pour l'Alaska</title>
-         
-    </head>
+<?php $title = 'Billet simple pour l\'Alaska'; ?>
         
-    <body>
+    <?php ob_start(); ?>
         <h1>Billet simple pour l'Alaska</h1>
         <p>Derniers billets du blog :</p>
  
@@ -31,5 +25,5 @@
         }
         $posts->closeCursor();
         ?>
-    </body>
-</html>
+    <?php $content = ob_get_clean(); ?>
+<?php require ('template.php'); ?>
