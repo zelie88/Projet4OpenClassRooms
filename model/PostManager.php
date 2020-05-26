@@ -1,4 +1,7 @@
 <?php
+
+namespace Projet4OpenClassRooms\Model;
+
 require_once("Manager.php");
 
 class PostManager extends Manager
