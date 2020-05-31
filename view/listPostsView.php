@@ -25,5 +25,7 @@
         }
         $posts->closeCursor();
         ?>
+        <a href="CRUD.php">Nouveau post</a>
     <?php $content = ob_get_clean(); ?>
+   
 <?php require('template.php'); ?>
