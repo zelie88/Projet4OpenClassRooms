@@ -1,4 +1,4 @@
-h1, h3
+h1, h2, h3
 {
     font-family: "Pacifico";
     text-align:center;
@@ -24,6 +24,7 @@ h3
 
 a
 {
+    font-family: "Pacifico";
     text-decoration: none;
     color: blue;
 }

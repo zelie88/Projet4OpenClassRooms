@@ -2,7 +2,7 @@
         
     <?php ob_start(); ?>
         <h1>Billet simple pour l'Alaska</h1>
-        <p>Derniers billets du blog :</p>
+        <h2>Derniers billets du blog :</h2>
  
         
         <?php
