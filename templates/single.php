@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>Billet simple pour l'Alaska</title>
-    <link href="../public/css/style.css" rel="stylesheet"/>
-</head>
+<?php $this->title = htmlspecialchars($article->getTitle());?>
 
-<body>
-<div>
-    <h1>Billet simple pour l'Alaska</h1>
+<h1>Billet simple pour l'Alaska</h1>
 
     <div class="news">
         <h3>
@@ -34,6 +26,3 @@
         }
         ?>
     </div>
-</div>
-</body>
-</html>

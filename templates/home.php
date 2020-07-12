@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>Billet simple pour l'Alaska</title>
-    <link href="../public/css/style.css" rel="stylesheet"/>
-</head>
+<?php $this->title = "Billet simple pour l'Alaska";?>
 
-<body>
-    <div>
-        <h1>Billet simple pour l'Alaska</h1>
+    <h1>Billet simple pour l'Alaska</h1>
 
     <?php
     foreach ($articles as $article)
     {
     ?>
-
         <div class="news">
             <h3>
                 <a href="../public/index.php?action=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a>
@@ -27,6 +18,3 @@
     <?php
     }
     ?>
-    </div>
-</body>
-</html>
