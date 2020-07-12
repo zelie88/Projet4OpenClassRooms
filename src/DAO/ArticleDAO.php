@@ -32,7 +32,7 @@ class ArticleDAO extends DAO
 
     public function getArticle($articleId)
     {
-        $sql = 'SELECT id, title, content, creationDate FROM articles WHERE id=?';
+        $sql = 'SELECT id, title, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS creationDate FROM articles WHERE id=?';
         $result = $this->createQUery($sql,[$articleId]);
         $article = $result->fetch();
         $result->closeCursor();

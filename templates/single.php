@@ -24,15 +24,14 @@
     <div id="comments">
         <h2>Commentaires</h2>
         <?php
-        while($comment = $comments->fetch())
+        foreach ($comments as $comment)
         {
             ?>
-            <h4><?= htmlspecialchars($comment->author);?></h4>
-            <p><?= htmlspecialchars($comment->comment);?></p>
-            <p>Posté le <?= htmlspecialchars($comment->comment_date);?></p>
+            <h4><?= htmlspecialchars($comment->getAuthor());?></h4>
+            <p><?= htmlspecialchars($comment->getComment());?></p>
+            <p>Posté le <?= htmlspecialchars($comment->getCommentDate());?></p>
             <?php
         }
-        $comments->closeCursor();
         ?>
     </div>
 </div>
