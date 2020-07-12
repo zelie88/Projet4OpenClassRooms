@@ -3,16 +3,20 @@
 namespace Projet4OpenClassRooms\config;
 
 use Projet4OpenClassRooms\src\controller\FrontController;
+use Projet4OpenClassRooms\src\controller\ErrorController;
 
 use Exception;
 
 class Router
 {
     private $frontController;
+    private $errorController;
 
     public function __construct()
     {
         $this->frontController = new FrontController();
+        $this->errorController = new ErrorController();
+
     }
 
     public function run()
@@ -24,7 +28,7 @@ class Router
                     $this->frontController->article($_GET['articleId']);
                 }
                 else {
-                    echo 'Page inconnue!';
+                    $this->errorController->errorNotFound();
                 }
             }
         
@@ -35,7 +39,7 @@ class Router
         
         catch (Exception $e)
         {
-            echo 'Erreur';
+            $this->errorController->errorServer();
         }
     }
 }
