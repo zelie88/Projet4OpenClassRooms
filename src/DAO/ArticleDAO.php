@@ -38,4 +38,11 @@ class ArticleDAO extends DAO
         $result->closeCursor();
         return $this->buildObject($article);
     }
+
+    public function addArticle($article)
+    {
+        extract($article);
+        $sql = 'INSERT INTO articles (title, content, creationDate) VALUES (?, ?, ?, CURDATE())';
+        $this->createQuery($sql, [$title, $content]);
+    }
 }

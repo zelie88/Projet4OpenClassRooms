@@ -2,7 +2,7 @@
 
 namespace Projet4OpenClassRooms\src\controller;
 
-class ErrorController
+class ErrorController extends Controller
 {
     public function errorNotFound()
     {
