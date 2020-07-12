@@ -18,3 +18,5 @@
     <?php
     }
     ?>
+    <?=$this->session->show('add_article');?>
+    <a href="../public/index.php?action=addArticle">Nouvel article</a>
