@@ -35,6 +35,9 @@ class Router
                 elseif($action === 'addArticle') {
                     $this->backController->addArticle($this->request->getPost());
                 }
+                elseif($action === 'editArticle') {
+                    $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
+                }
                 else {
                     $this->errorController->errorNotFound();
                 }

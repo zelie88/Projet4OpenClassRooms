@@ -2,6 +2,11 @@
 
     <h1>Billet simple pour l'Alaska</h1>
 
+    <div class="msg">
+    <?= $this->session->show('add_article'); ?>
+    <?= $this->session->show('edit_article'); ?>
+    </div>
+
     <?php
     foreach ($articles as $article)
     {
@@ -18,5 +23,5 @@
     <?php
     }
     ?>
-    <?=$this->session->show('add_article');?>
+    
     <a href="../public/index.php?action=addArticle">Nouvel article</a>

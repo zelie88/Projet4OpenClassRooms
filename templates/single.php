@@ -11,6 +11,9 @@
     </div>
     <br>
 
+    <div class="actions">
+    <a href="../public/index.php?action=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+    </div>
     <a href="../public/index.php">Retour à l'accueil</a>
 
     <div id="comments">
