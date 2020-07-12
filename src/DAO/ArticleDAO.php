@@ -2,6 +2,7 @@
 
 namespace Projet4OpenClassRooms\src\DAO;
 
+use Projet4OpenClassRooms\config\Parameter;
 use Projet4OpenClassRooms\src\model\Article;
 
 class ArticleDAO extends DAO
@@ -39,10 +40,9 @@ class ArticleDAO extends DAO
         return $this->buildObject($article);
     }
 
-    public function addArticle($article)
+    public function addArticle(Parameter $post)
     {
-        extract($article);
-        $sql = 'INSERT INTO articles (title, content, creationDate) VALUES (?, ?, ?, CURDATE())';
-        $this->createQuery($sql, [$title, $content]);
+        $sql = 'INSERT INTO articles (title, content, creationDate) VALUES (?, ?, CURDATE())';
+        $this->createQuery($sql, [$post->get('title'), $post->get('content')]);
     }
 }
