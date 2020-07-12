@@ -1,13 +1,3 @@
-<?php
-
-use \Projet4OpenClassRooms\config\Autoloader;
-Autoloader::register();
-
-use Projet4OpenClassRooms\src\DAO\ArticleDAO;
-use Projet4OpenClassRooms\src\DAO\CommentDAO;
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,27 +12,18 @@ use Projet4OpenClassRooms\src\DAO\CommentDAO;
 
     <div class="news">
         <h3>
-
-    <?php
-    $article = $articles->fetch()
-    ?>
-            <?= htmlspecialchars($article->title);?>
-            <em>le <?= htmlspecialchars($article->creationDate);?></em>
+            <?= htmlspecialchars($article->getTitle());?>
+            <em>le <?= htmlspecialchars($article->getCreationDate());?></em>
         </h3>
-            <p><?= htmlspecialchars($article->content);?></p>
-        </div>
+            <p><?= htmlspecialchars($article->getContent());?></p>
+    </div>
     <br>
 
-    <?php
-    $articles->closeCursor();
-    ?>
-
     <a href="../public/index.php">Retour à l'accueil</a>
+
     <div id="comments">
         <h2>Commentaires</h2>
         <?php
-        $comment = new CommentDAO();
-        $comments = $comment->getComments($_GET['articleId']);
         while($comment = $comments->fetch())
         {
             ?>

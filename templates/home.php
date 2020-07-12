@@ -1,12 +1,3 @@
-<?php
-
-use \Projet4OpenClassRooms\config\Autoloader;
-Autoloader::register();
-
-use Projet4OpenClassRooms\src\DAO\ArticleDAO;
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,22 +11,21 @@ use Projet4OpenClassRooms\src\DAO\ArticleDAO;
         <h1>Billet simple pour l'Alaska</h1>
 
     <?php
-    while($article = $articles->fetch())
+    foreach ($articles as $article)
     {
     ?>
 
         <div class="news">
             <h3>
-                <a href="../public/index.php?action=article&articleId=<?= htmlspecialchars($article->id);?>"><?= htmlspecialchars($article->title);?></a>
-                <em>le <?= htmlspecialchars($article->creationDate);?></em>
+                <a href="../public/index.php?action=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a>
+                <em>le <?= htmlspecialchars($article->getCreationDate());?></em>
 
             </h3>
-            <p><?= htmlspecialchars($article->content);?></p>
+            <p><?= htmlspecialchars($article->getContent());?></p>
         </div>
         <br>
-        <?php
+    <?php
     }
-    $articles->closeCursor();
     ?>
     </div>
 </body>
