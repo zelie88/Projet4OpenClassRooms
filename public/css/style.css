@@ -29,6 +29,11 @@ a
     color: blue;
 }
 
+h3 a
+{
+    color:white;
+}
+
 /*CRUD*/
 body {
     font-size: 19px;
@@ -76,12 +81,12 @@ form {
     border-radius: 5px;
     border: 1px solid gray;
 }
-.btn {
+button.btn {
     padding: 10px;
-    font-size: 15px;
+    font-family: "Pacifico";
+    text-decoration: none;
     color: white;
     background: #5F9EA0;
-    border: none;
     border-radius: 5px;
 }
 .edit_btn {
