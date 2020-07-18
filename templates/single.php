@@ -12,8 +12,10 @@
     <br>
 
     <div class="actions">
-    <a href="../public/index.php?action=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+        <a href="../public/index.php?action=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+        <a href="../public/index.php?action=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
     </div>
+
     <a href="../public/index.php">Retour à l'accueil</a>
 
     <div id="comments">

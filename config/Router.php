@@ -38,6 +38,9 @@ class Router
                 elseif($action === 'editArticle') {
                     $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
                 }
+                elseif($action === 'deleteArticle') {
+                    $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
+                }
                 else {
                     $this->errorController->errorNotFound();
                 }
