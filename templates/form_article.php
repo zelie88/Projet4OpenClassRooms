@@ -1,7 +1,5 @@
 <?php
 $action = isset($article) && $article->getId() ? 'editArticle&articleId='.$article->getId() : 'addArticle';
-$title = isset($article) && $article->getTitle() ? htmlspecialchars($article->getTitle()) : '';
-$content = isset($article) && $article->getContent() ? htmlspecialchars($article->getContent()) : '';
 $submit = $action === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 ?>
 
@@ -9,12 +7,16 @@ $submit = $action === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 
 		<div class="input-group">
 			<label for="title">Titre</label>
-			<input type="text" id="title" name="title" value="<?=$title;?>">
+			<input type="text" id="title" name="title" value="<?= isset($post) ? htmlspecialchars($post->get('title')): ''; ?>">
+			<br>
+			<?= isset($errors['title']) ? $errors['title'] : ''; ?>
 		</div>
 			
 		<div class="input-group">
 			<label for="content">Article</label>
-			<textarea id="content" name="content"><?=$content;?></textarea>
+			<textarea id="content" name="content"><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea>
+			<br>
+			<?= isset($errors['content']) ? $errors['content'] : ''; ?>
 		</div>
 				
 		<input type="submit" name="submit" id="sumbit" value="Envoyer">

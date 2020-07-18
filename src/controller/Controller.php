@@ -6,6 +6,7 @@ use Projet4OpenClassRooms\src\DAO\ArticleDAO;
 use Projet4OpenClassRooms\src\DAO\CommentDAO;
 use Projet4OpenClassRooms\src\model\View;
 use Projet4OpenClassRooms\config\Request;
+use Projet4OpenClassRooms\src\constraint\Validation;
 
 
 abstract class Controller
@@ -17,6 +18,7 @@ abstract class Controller
     protected $get;
     protected $post;
     protected $session;
+    protected $validation;
 
     public function __construct()
     {
@@ -24,6 +26,7 @@ abstract class Controller
         $this->commentDAO = new CommentDAO();
         $this->view = new View();
         $this->request = new Request();
+        $this->validation = new Validation();
         $this->get = $this->request->getGet();
         $this->post = $this->request->getPost();
         $this->session = $this->request->getSession();
