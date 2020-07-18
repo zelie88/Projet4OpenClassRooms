@@ -28,6 +28,21 @@
             <p><?= htmlspecialchars($comment->getComment());?></p>
             <p>Posté le <?= htmlspecialchars($comment->getCommentDate());?></p>
             <?php
+            if($comment->isFlag()) {
+                ?>
+                <p>Ce commentaire a été signalé</p>
+                <?php
+            } else {
+                ?>
+                <p><a href="../public/index.php?action=flagComment&commentId=<?= $comment->getId(); ?>">Signaler ce commentaire</a></p>
+                <?php
+            }
+            ?>
+                <p><a href="../public/index.php?action=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer ce commentaire</a></p>
+                <br>   
+        <?php
         }
         ?>
+        <h3>Ajouter un commentaire</h3>
+        <?php include('form_comment.php');?>
     </div>

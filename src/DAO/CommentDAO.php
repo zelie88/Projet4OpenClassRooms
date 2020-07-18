@@ -3,6 +3,8 @@
 namespace Projet4OpenClassRooms\src\DAO;
 
 use Projet4OpenClassRooms\src\model\Comment;
+use Projet4OpenClassRooms\config\Parameter;
+
 
 class CommentDAO extends DAO
 {
@@ -13,12 +15,13 @@ class CommentDAO extends DAO
         $comment->setAuthor($row['author']);
         $comment->setComment($row['comment']);
         $comment->setCommentDate($row['comment_date']);
+        $comment->setFlag($row['flag']);
         return $comment;
     }
 
     public function getComments($articleId)
     {
-        $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y\') AS comment_date FROM comments WHERE post_id = ? ORDER BY comment_date DESC';
+        $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y\') AS comment_date, flag FROM comments WHERE post_id = ? ORDER BY comment_date DESC';
         $result = $this->createQuery($sql, [$articleId]);
         $comments = [];
         foreach ($result as $row)
@@ -28,5 +31,28 @@ class CommentDAO extends DAO
             }
         $result->closeCursor();
         return $comments;
+    }
+
+    public function addComment(Parameter $post, $articleId)
+    {
+        $sql = 'INSERT INTO comments (post_id, author, comment, comment_date) VALUES (?, ?, ?, CURDATE())';
+        $this->createQuery($sql, [
+            $post->get('author'),
+            $post->get('comment'),
+            0,
+            $articleId
+        ]);
+    }
+
+    public function flagComment($commentId)
+    {
+        $sql = 'UPDATE comments SET flag = ? WHERE id = ?';
+        $this->createQuery($sql, [1, $commentId]);
+    }
+
+    public function deleteComment($commentId)
+    {
+        $sql = 'DELETE FROM comments WHERE id = ?';
+        $this->createQuery($sql, [$commentId]);
     }
 }

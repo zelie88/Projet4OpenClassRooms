@@ -8,6 +8,7 @@ class Comment
     private $author;
     private $comment;
     private $comment_date;
+    private $flag;
 
     public function getId()
     {
@@ -45,4 +46,13 @@ class Comment
         $this->comment_date = $comment_date;
     }
 
+    public function isFlag()
+    {
+        return $this->flag;
+    }
+
+    public function setFlag($flag)
+    {
+        $this->flag = $flag;
+    }
 }

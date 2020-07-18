@@ -41,6 +41,15 @@ class Router
                 elseif($action === 'deleteArticle') {
                     $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
                 }
+                elseif($action === 'addComment') {
+                    $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
+                }
+                elseif($action === 'flagComment'){
+                    $this->frontController->flagComment($this->request->getGet()->get('commentId'));
+                }
+                elseif($action === 'deleteComment'){
+                    $this->backController->deleteComment($this->request->getGet()->get('commentId'));
+                }
                 else {
                     $this->errorController->errorNotFound();
                 }
