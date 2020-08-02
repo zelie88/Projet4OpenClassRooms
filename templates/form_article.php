@@ -14,7 +14,7 @@ $submit = $action === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 			
 		<div class="input-group">
 			<label for="content">Article</label>
-			<textarea id="content" name="content"><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea>
+			<textarea id="mycontent" name="content"><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea>
 			<br>
 			<?= isset($errors['content']) ? $errors['content'] : ''; ?>
 		</div>

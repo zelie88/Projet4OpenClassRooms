@@ -1,9 +1,10 @@
 h1, h2, h3
 {
-    font-family: "Pacifico";
+    font-family: "Pacifico"!important;
     text-align:center;
     padding: 20px;
 }
+
 h3
 {
     background-color: #007bff;
@@ -32,6 +33,12 @@ a
 h3 a
 {
     color:white;
+}
+
+nav .nav
+{
+    display: flex;
+    justify-content: center;
 }
 
 /*CRUD*/
