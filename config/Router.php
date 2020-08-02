@@ -27,34 +27,51 @@ class Router
     {
         $action = $this->request->getGet()->get('action');
         try {
-            if(isset($action))
+            if (isset($action))
             {
-                if($action === 'article') {
+                switch ($action)
+                {
+                case 'article':
                     $this->frontController->article($this->request->getGet()->get('articleId'));
-                }
-                elseif($action === 'addArticle') {
+                    break;
+                
+                case 'addArticle': 
                     $this->backController->addArticle($this->request->getPost());
-                }
-                elseif($action === 'editArticle') {
+                    break;
+                
+                case 'editArticle':
                     $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
-                }
-                elseif($action === 'deleteArticle') {
+                    break;
+
+                case 'deleteArticle':
                     $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
-                }
-                elseif($action === 'addComment') {
+                    break;
+
+                case 'addComment':
                     $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
-                }
-                elseif($action === 'flagComment'){
+                    break;
+
+                case 'flagComment':
                     $this->frontController->flagComment($this->request->getGet()->get('commentId'));
-                }
-                elseif($action === 'deleteComment'){
+                    break;
+
+                case 'deleteComment':
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));
-                }
-                else {
+                    break;
+
+                case 'register':
+                    $this->frontController->register($this->request->getPost());
+                    break;
+
+                case'login':
+                    $this->frontController->login($this->request->getPost());
+                    break;
+
+                default:
                     $this->errorController->errorNotFound();
+                    break;
                 }
             }
-        
             else {
                 $this->frontController->home();
             }

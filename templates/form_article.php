@@ -1,5 +1,5 @@
 <?php
-$action = isset($article) && $article->getId() ? 'editArticle&articleId='.$article->getId() : 'addArticle';
+$action = isset($post) && $post->get('id') ? 'editArticle&articleId='.$post->get('id') : 'addArticle';
 $submit = $action === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 ?>
 
@@ -19,5 +19,5 @@ $submit = $action === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 			<?= isset($errors['content']) ? $errors['content'] : ''; ?>
 		</div>
 				
-		<input type="submit" name="submit" id="sumbit" value="Envoyer">
+		<input type="submit" name="submit" id="sumbit" value="<?= $submit; ?>">
 </form>

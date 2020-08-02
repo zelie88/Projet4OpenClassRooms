@@ -54,7 +54,7 @@ class BackController extends Controller
     public function deleteArticle($articleId)
     {
         $this->articleDAO->deleteArticle($articleId);
-        $this->session->set('delete Article', 'Article supprimé');
+        $this->session->set('delete_article', 'Article supprimé!');
         header('Location: ../public/index.php');
     }
 

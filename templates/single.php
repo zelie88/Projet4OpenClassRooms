@@ -13,6 +13,7 @@
 
     <div class="actions">
         <a href="../public/index.php?action=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+        <br>
         <a href="../public/index.php?action=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
     </div>
 
