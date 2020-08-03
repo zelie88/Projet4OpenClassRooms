@@ -14,6 +14,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="../public/index.php?action=profile">Profil</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../public/index.php?action=administration">Administration</a>
+            </li>
+            
+          
             <?php
         } else {
             ?>
@@ -23,9 +28,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="../public/index.php?action=login">Connexion</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../public/index.php?action=addArticle">Nouvel article</a>
-            </li>
+            
             
         <?php
         }
@@ -34,14 +37,13 @@
     </nav>
 
     <div class="msg">
-        <?= $this->session->show('add_article'); ?>
-        <?= $this->session->show('edit_article'); ?>
-        <?= $this->session->show('delete_article'); ?>
+        
         <?= $this->session->show('add_comment'); ?>
         <?= $this->session->show('flag_comment'); ?>
         <?= $this->session->show('delete_comment'); ?>
         <?= $this->session->show('register'); ?>
         <?= $this->session->show('login'); ?>
+        <?= $this->session->show('logout'); ?>
     </div>
     </header>
     

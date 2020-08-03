@@ -67,6 +67,22 @@ class Router
                     $this->frontController->login($this->request->getPost());
                     break;
 
+                case 'profile':
+                    $this->backController->profile();
+                    break;
+                
+                case 'updatePassword':
+                    $this->backController->updatePassword($this->request->getPost());
+                    break;
+
+                case 'logout':
+                    $this->backController->logout();
+                    break;
+
+                case 'administration':
+                    $this->backController->administration();
+                    break;
+
                 default:
                     $this->errorController->errorNotFound();
                     break;
