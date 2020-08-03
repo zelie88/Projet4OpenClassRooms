@@ -46,8 +46,14 @@
                 <?php
             }
             ?>
+                <?php
+                    if ($this->session->get('pseudo')) {
+                ?>
                 <p><a href="../public/index.php?action=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer ce commentaire</a></p>
-                <br>   
+                <br>
+                <?php
+            }
+            ?>
         <?php
         }
         ?>
