@@ -55,6 +55,10 @@ class Router
                     $this->frontController->flagComment($this->request->getGet()->get('commentId'));
                     break;
 
+                case 'unflagComment':
+                    $this->backController->unflagComment($this->request->getGet()->get('commentId'));
+                    break;
+
                 case 'deleteComment':
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));
                     break;

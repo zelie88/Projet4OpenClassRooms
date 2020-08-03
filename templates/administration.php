@@ -5,6 +5,7 @@
 <?= $this->session->show('add_article'); ?>
 <?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('delete_article'); ?>
+<?= $this->session->show('unflag_comment'); ?>
 
 <h2>Articles</h2>
 <a href="../public/index.php?action=addArticle">Nouvel article</a>
@@ -37,5 +38,30 @@
 
 
 <h2>Commentaires signalés</h2>
+
+<table>
+    <tr>
+        <td>Pseudo</td>
+        <td>Message</td>
+        <td>Date</td>
+        <td>Actions</td>
+    </tr>
+    <?php
+    foreach ($comments as $comment)
+    {
+        ?>
+        <tr>
+            <td><?= htmlspecialchars($comment->getAuthor());?></td>
+            <td><?= substr(htmlspecialchars($comment->getComment()), 0, 150);?></td>
+            <td><?= htmlspecialchars($comment->getCommentDate());?></td>
+            <td>
+                <a href="../public/index.php?action=unflagComment&commentId=<?= $comment->getId(); ?>">Approuver</a>
+                <a href="../public/index.php?action=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer</a>
+            </td>
+        </tr>
+        <?php
+    }
+    ?>
+</table>
 
 <a href="../public/index.php">Retour à l'accueil</a>

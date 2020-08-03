@@ -12,9 +12,16 @@
     <br>
 
     <div class="actions">
+        <?php
+        if ($this->session->get('pseudo')) {
+            ?>
+        
         <a href="../public/index.php?action=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
         <br>
         <a href="../public/index.php?action=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+        <?php
+        }
+        ?>
     </div>
 
     <a href="../public/index.php">Retour à l'accueil</a>
