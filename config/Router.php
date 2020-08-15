@@ -63,10 +63,6 @@ class Router
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));
                     break;
 
-                case 'register':
-                    $this->frontController->register($this->request->getPost());
-                    break;
-
                 case'login':
                     $this->frontController->login($this->request->getPost());
                     break;
