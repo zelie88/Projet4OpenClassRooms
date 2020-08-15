@@ -1,13 +1,19 @@
 <?php $this->title = htmlspecialchars($article->getTitle());?>
 
-<h1>Billet simple pour l'Alaska</h1>
+    <header>
+        <h1>Billet simple pour l'Alaska</h1>
+        <a href="../public/index.php" class="btn btn-secondary" role="button">Retour à l'accueil</a>
 
-    <div class="news">
-        <h3>
+    </header>
+
+    <div class="card" id="news">
+        <h2 class="card-title">
             <?= htmlspecialchars($article->getTitle());?>
             <em>le <?= htmlspecialchars($article->getCreationDate());?></em>
-        </h3>
-            <p><?= htmlspecialchars($article->getContent());?></p>
+        </h2>
+        <div id="article">
+            <p><?= $article->getContent();?></p>
+        </div>
     </div>
     <br>
 
@@ -24,10 +30,9 @@
         ?>
     </div>
 
-    <a href="../public/index.php">Retour à l'accueil</a>
 
-    <div id="comments">
-        <h2>Commentaires</h2>
+    <div id="comments" class="card col-9">
+        <h3 class="card-title">Commentaires</h3>
         <?php
         foreach ($comments as $comment)
         {

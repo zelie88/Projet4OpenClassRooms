@@ -1,38 +1,61 @@
+body
+{
+    background: url('../img/font.png') fixed top left;
+    font-size: 19px;
+    font-family: "Pacifico";
+}
+
+header
+{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 h1, h2, h3
 {
-    font-family: "Pacifico"!important;
     text-align:center;
     padding: 20px;
 }
 
-h3
+h1
 {
-    background-color: #007bff;
-    color:white;
-    font-size:0.9em;
-    margin-bottom:0px;
-}
-.news p
-{
-    background-color:#CCCCCC;
-    margin-top:0px;
-}
-.news
-{
-    width:70%;
-    margin:auto;
+    margin: auto;
+    font-size: 3rem;
 }
 
-a
+#news, #comments
 {
-    font-family: "Pacifico";
-    text-decoration: none;
-    color: blue;
+    border: 2px solid white;
+    border-radius: 15px;
 }
 
-h3 a
+#comments
 {
-    color:white;
+    margin: auto;
+    justify-content:center;
+    padding: 0;
+}
+
+.card-title
+{
+    background-color:#12a3ac;
+    border-radius:15px 15px 0 0;
+    color: white;
+    font-size: 1.5em;
+}
+
+#article
+{
+    text-align: center;
+}
+
+h2 a
+{
+    color: white;
 }
 
 nav .nav
@@ -41,10 +64,26 @@ nav .nav
     justify-content: center;
 }
 
-/*CRUD*/
-body {
-    font-size: 19px;
+nav a
+{
+    color:white;
 }
+
+a:hover
+{
+    color: black;
+    text-decoration: none;
+}
+
+#copyright
+{
+    margin-left: 20px;
+}
+
+
+
+/*CRUD*/
+
 table{
     width: 50%;
     margin: 30px auto;
@@ -52,7 +91,7 @@ table{
     text-align: left;
 }
 tr {
-    border-bottom: 1px solid #cbcbcb;
+    border-bottom: 1px solid #1f1919;
 }
 th, td{
     border: none;
@@ -64,9 +103,7 @@ tr:hover {
 }
 
 form {
-    width: 45%;
-    margin: 50px auto;
-    text-align: left;
+    
     padding: 20px; 
     border: 1px solid #bbbbbb; 
     border-radius: 5px;
@@ -74,34 +111,25 @@ form {
 
 .input-group {
     margin: 10px 0px 10px 0px;
-}
-.input-group label {
-    display: block;
-    text-align: left;
-    margin: 3px;
-}
-.input-group input {
-    height: 30px;
-    width: 93%;
     padding: 5px 10px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid gray;
 }
-button.btn {
-    padding: 10px;
-    font-family: "Pacifico";
-    text-decoration: none;
-    color: white;
-    background: #5F9EA0;
-    border-radius: 5px;
+
+.input-group label {
+    display: block;
+    text-align: left;
+    margin: 3px;
 }
+
 .edit_btn {
     text-decoration: none;
+    box-shadow: none;
     padding: 2px 5px;
     background: #2E8B57;
     color: white;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .del_btn {
@@ -112,12 +140,11 @@ button.btn {
     background: #800000;
 }
 .msg {
-    margin: 30px auto; 
+     
     padding: 10px; 
     border-radius: 5px; 
     color: #3c763d; 
-    background: #dff0d8; 
-    border: 1px solid #3c763d;
+    
     width: 50%;
     text-align: center;
 }

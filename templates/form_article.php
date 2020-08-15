@@ -19,5 +19,5 @@ $submit = $action === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 			<?= isset($errors['content']) ? $errors['content'] : ''; ?>
 		</div>
 				
-		<input type="submit" name="submit" id="sumbit" value="<?= $submit; ?>">
+		<input type="submit" class="edit_btn" name="submit" id="sumbit" value="<?= $submit; ?>">
 </form>

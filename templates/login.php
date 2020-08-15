@@ -4,7 +4,7 @@
 <?= $this->session->show('error_login'); ?>
 
 <div>
-    <form method="post" action="../public/index.php?action=login">
+    <form method="post" action="../public/index.php?action=login" id="connection">
         <label for="pseudo">Pseudo</label><br>
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
         <label for="password">Mot de passe</label><br>
