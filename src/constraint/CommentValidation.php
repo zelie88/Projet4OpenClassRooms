@@ -49,7 +49,7 @@ class CommentValidation extends Validation
             return $this->constraint->notBlank('author', $value);
         }
         if($this->constraint->minLength($name, $value, 2)) {
-            return $this->constraint->minLength('author', $value, 2);
+            return $this->constraint->minLength('author', $value, 3);
         }
         if($this->constraint->maxLength($name, $value, 255)) {
             return $this->constraint->maxLength('author', $value, 255);
@@ -62,7 +62,7 @@ class CommentValidation extends Validation
             return $this->constraint->notBlank('comment', $value);
         }
         if($this->constraint->minLength($name, $value, 2)) {
-            return $this->constraint->minLength('comment', $value, 2);
+            return $this->constraint->minLength('comment', $value, 3);
         }
     }
 

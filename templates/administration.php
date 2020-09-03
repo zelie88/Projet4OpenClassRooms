@@ -9,8 +9,9 @@
     <?= $this->session->show('unflag_comment'); ?>
 </div>
 
-<h3>Articles</h3>
 <a href="../public/index.php?action=addArticle">Nouvel article</a>
+
+<h3>Articles</h3>
 
 <table>
 	<thead>
@@ -27,10 +28,10 @@
         ?>
         <tr>
             <td><a href="../public/index.php?action=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
-            <td><?= substr(htmlspecialchars($article->getContent()), 0, 150);?></td>
+            <td><?= substr($article->getContent(), 0, 150);?></td>
             <td>
-                <a href="../public/index.php?action=editArticle&articleId=<?= $article->getId(); ?>" class="edit_btn">Modifier</a>
-                <a href="../public/index.php?action=deleteArticle&articleId=<?= $article->getId(); ?>" class="del_btn">Supprimer</a>
+                <a class="btn btn-primary" role="button" href="../public/index.php?action=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+                <a class="btn btn-danger" role="button" href="../public/index.php?action=deleteArticle&articleId=<?= $article->getId(); ?>" class="del_btn">Supprimer</a>
             </td>
         </tr>
         <?php
@@ -57,8 +58,8 @@
             <td><?= substr(htmlspecialchars($comment->getComment()), 0, 150);?></td>
             <td><?= htmlspecialchars($comment->getCommentDate());?></td>
             <td>
-                <a href="../public/index.php?action=unflagComment&commentId=<?= $comment->getId(); ?>">Approuver</a>
-                <a href="../public/index.php?action=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer</a>
+                <a class="btn btn-success" role="button" href="../public/index.php?action=unflagComment&commentId=<?= $comment->getId(); ?>">Approuver</a>
+                <a class="btn btn-danger" role="button" href="../public/index.php?action=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer</a>
             </td>
         </tr>
         <?php

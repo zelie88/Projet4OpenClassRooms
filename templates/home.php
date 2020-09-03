@@ -1,25 +1,17 @@
 <?php $this->title = "Billet simple pour l'Alaska";?>
 
     <header>
-        <h1 class="col-10">Billet simple pour l'Alaska</h1>
+        <h1>Billet simple pour l'Alaska</h1>
 
         <nav>
-            <ul class="nav nav-pills">
             <?php
             if ($this->session->get('pseudo')) {
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?action=logout">Déconnexion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?action=profile">Profil</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="../public/index.php?action=administration">Administration</a>
-                </li>
-            </ul>
+                    <a class="btn btn-light" href="../public/index.php?action=administration">Administration</a>
+                    <a class="btn btn-light" href="../public/index.php?action=profile">Profil</a>
+                    <a class="btn btn-light" href="../public/index.php?action=logout">Déconnexion</a>
         </nav>
-                <?php
+            <?php
             } else {
                 ?>
                     <a href="../public/index.php?action=login" class="btn btn-light" role="button" id="buttonConnect">Connexion</a>  
@@ -28,17 +20,14 @@
             ?>
     </header>
     
-        <div class="msg">
-            
-            <?= $this->session->show('add_comment'); ?>
-            <?= $this->session->show('flag_comment'); ?>
-            <?= $this->session->show('delete_comment'); ?>
-            <?= $this->session->show('login'); ?>
-            <?= $this->session->show('logout'); ?>
-        </div>
-        
-        
-
+    <div class="msg">
+        <?= $this->session->show('add_comment'); ?>
+        <?= $this->session->show('flag_comment'); ?>
+        <?= $this->session->show('delete_comment'); ?>
+        <?= $this->session->show('login'); ?>
+        <?= $this->session->show('logout'); ?>
+    </div>
+    
         <?php
         foreach ($articles as $article)
         {
