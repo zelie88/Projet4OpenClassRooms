@@ -21,7 +21,7 @@ class CommentDAO extends DAO
 
     public function getComments($articleId)
     {
-        $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y\') AS comment_date, flag FROM comments WHERE post_id = ? ORDER BY comment_date DESC';
+        $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y\') AS comment_date, flag FROM comments WHERE post_id = ? ORDER BY id DESC';
         $result = $this->createQuery($sql, [$articleId]);
         $comments = [];
         foreach ($result as $row)
@@ -39,7 +39,7 @@ class CommentDAO extends DAO
         $this->createQuery($sql, [
             $articleId,
             $post->get('author'),
-            $post->get('comment'),
+            $post->get('comment'), 
             0
         ]);
     }
@@ -64,7 +64,7 @@ class CommentDAO extends DAO
 
     public function getFlagComments()
     {
-        $sql = 'SELECT id, author, comment, comment_date, flag FROM comments WHERE flag = ? ORDER BY comment_date DESC';
+        $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y\') AS comment_date, flag FROM comments WHERE flag = ? ORDER BY comment_date DESC';
         $result = $this->createQuery($sql, [1]);
         $comments = [];
         foreach ($result as $row) {
