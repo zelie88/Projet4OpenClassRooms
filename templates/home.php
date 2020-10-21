@@ -10,39 +10,61 @@
                     <a class="btn btn-light" href="../public/index.php?action=administration">Administration</a>
                     <a class="btn btn-light" href="../public/index.php?action=profile">Profil</a>
                     <a class="btn btn-light" href="../public/index.php?action=logout">Déconnexion</a>
-        </nav>
+        
             <?php
             } else {
                 ?>
-                    <a href="../public/index.php?action=login" class="btn btn-light" role="button" id="buttonConnect">Connexion</a>  
+                    <a href="../public/index.php?action=login" class="btn btn-light" role="button">Connexion</a>  
             <?php
             }
             ?>
-    </header>
+        </nav>
     
-    <div class="msg">
-        <?= $this->session->show('add_comment'); ?>
-        <?= $this->session->show('flag_comment'); ?>
-        <?= $this->session->show('delete_comment'); ?>
+    <div class="alert-success" role="alert">
+        <?= $this->session->show('add_comment');?>
         <?= $this->session->show('login'); ?>
-        <?= $this->session->show('logout'); ?>
+    </div>
+
+    <div class="alert-danger" role="alert">
+            <?= $this->session->show('flag_comment'); ?>
+            <?= $this->session->show('logout'); ?>
     </div>
     
+
+    </header>
+    
+    <div class="row">
+        <aside class="col-lg-3">
+            <?php include('author.php');?>
+        </aside>
+        
+
+        <section class="col-lg-9">
         <?php
+    
         foreach ($articles as $article)
         {
         ?>
-            <div id="news" class="card">
+            <div class="card">
                 <h2 class="card-title">
                     <a href="../public/index.php?action=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a>
                     <em>le <?= htmlspecialchars($article->getCreationDate());?></em>
 
                 </h2>
-                <div id="article" class="card-body">
-                    <p><?= substr($article->getContent(), 0, 350);?></p>
+                <div class="card-body">
+                    <p><?= substr($article->getContent(), 0, 450);?></p>
+                    <?php
+                    if(strlen($article->getContent()) > 450) {
+                        ?>
+                        <div class="fadeout"></div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
             <br>
         <?php
         }
-        ?>
+    ?>
+    </section>
+    </div>
