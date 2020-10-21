@@ -1,6 +1,10 @@
 <?php $this->title ="Erreur 404";?>
 
-    <h1>Erreur 404...</h1> 
-    <h3>Page non trouvée!</h3>
+<?php include('header.php');?>
 
-    <a href="../public/index.php">Retour à l'accueil</a>
+<div class="card">
+        <h3 class="card-title">Erreur 404...</h3> 
+    <p class="card-body">Page non trouvée!</p>
+</div>
+<br>
+

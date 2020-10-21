@@ -1,6 +1,11 @@
 <?php $this->title ="Erreur 500";?>
 
-    <h1>Erreur 500...</h1> 
-    <h3>Problème serveur!</h3>
+<?php include('header.php');?>
 
-    <a href="../public/index.php">Retour à l'accueil</a>
+<div class="card">
+        <h3 class="card-title">Erreur 500...</h3> 
+    <p class="card-body">Problème serveur!</p>
+</div>
+<br>
+
+

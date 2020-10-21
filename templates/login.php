@@ -1,11 +1,10 @@
 <?php $this->title = "Connexion"; ?>
 
-<header>
-    <h1>Billet simple pour l'Alaska</h1>
-    <a href="../public/index.php" class="btn btn-secondary">Retour à l'accueil</a>
-</header>
+<?php include('header.php');?>
 
+<div class="alert-danger">
 <?= $this->session->show('error_login'); ?>
+</div>
 
     <form method="post" action="../public/index.php?action=login" class="card">
         <div class="form-group">
