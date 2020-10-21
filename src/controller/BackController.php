@@ -100,7 +100,7 @@ class BackController extends Controller
         if($this->checkLoggedIn()) {
             $this->commentDAO->deleteComment($commentId);
             $this->session->set('delete_comment', 'Commentaire supprimé!');
-            header('Location: ../public/index.php');
+            header('Location: ../public/index.php?action=administration');
         }
     }
 
@@ -116,7 +116,7 @@ class BackController extends Controller
         if($this->checkLoggedIn()) {
             if($post->get('submit')) {
             $this->userDAO->updatePassword($post, $this->session->get('pseudo'));
-            $this->session->set('update_password', 'Mot de passe modifié!');
+            $this->session->set('update_password', 'Le mot de passe a bien été modifié!');
             header('Location: ../public/index.php?action=profile');
             }
                 return $this->view->render('update_password');
