@@ -1,12 +1,8 @@
 <?php $this->title = htmlspecialchars($article->getTitle());?>
 
-    <header>
-        <h1>Billet simple pour l'Alaska</h1>
-        <a href="../public/index.php" class="btn btn-secondary" role="button">Retour à l'accueil</a>
+<?php include('header.php');?>
 
-    </header>
-
-    <div class="card" id="news">
+    <div class="card">
         <h2 class="card-title">
             <?= htmlspecialchars($article->getTitle());?>
             <em>le <?= htmlspecialchars($article->getCreationDate());?></em>
@@ -22,7 +18,27 @@
             
             <a class="btn btn-primary" href="../public/index.php?action=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
             <br>
-            <a class="btn btn-danger"href="../public/index.php?action=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+            <a class="btn btn-danger" role="button" data-toggle="modal" data-target="#staticBackdrop">Supprimer</a>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Attention!</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Voulez-vous vraiment supprimer cet article?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                        <a type="button" class="btn btn-danger" href="../public/index.php?action=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
             <?php
             }
             ?>
@@ -36,7 +52,8 @@
     <div id="comments" class="card">
         <h3 class="card-title">Commentaires</h3>
         <div class="card-body">
-        <?php
+
+    <?php
 
     if(count($comments) > 0){
 
@@ -65,7 +82,7 @@
                 }
                 ?>
                 </div>
-<?php
+    <?php
             }
     }
     else {
@@ -80,8 +97,8 @@
 
     <div id="addComment" class="card">
         <h3 class="card-title">Ajouter un commentaire</h3>
-        <div class="card-body">
-        <?php include('form_comment.php');?>
-        </div>
+            <div class="card-body">
+                <?php include('form_comment.php');?>
+            </div>
     </div>
-    <br>
+<br>
