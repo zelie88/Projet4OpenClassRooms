@@ -23,7 +23,8 @@
 <div class="card">
     <h2 class="card-title">Articles</h2>
 
-    <table>
+    <div class="table-responsive-sm">
+    <table class="table">
         <thead>
             <tr>
                 <th>Titre</th>
@@ -69,12 +70,14 @@
         }
         ?>
     </table>
+    </div>
 </div>
 <br>
 <div class="card">
     <h2 class="card-title">Commentaires signalés</h2>
 
-    <table>
+    <div class="table-responsive-sm">
+    <table class="table">
         <tr>
             <td>Pseudo</td>
             <td>Message</td>
@@ -98,5 +101,6 @@
         }
         ?>
     </table>
+    </div>
 </div>
 <br>

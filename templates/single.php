@@ -7,7 +7,7 @@
             <?= htmlspecialchars($article->getTitle());?>
             <em>le <?= htmlspecialchars($article->getCreationDate());?></em>
         </h2>
-        <div id="article" class="card-body">
+        <div class="card-body">
             <?= $article->getContent();?>
         </div>
 
