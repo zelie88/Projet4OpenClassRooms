@@ -19,13 +19,14 @@
     </head>
 
     <body>
-        <div id="content" class="container">
+        <div id="content" class="container-fluid">
             <?=$content?>
         </div>
 
-        <div id="copyright">
-            <p>Copyright Nicolas Bouvier, <em>L'usage du monde</em></p>
-        </div>
+    <footer>
+        <p>Textes Nicolas Bouvier, <em>L'usage du monde</em></p>
+    </footer>
+
     </body>
 
 </html>

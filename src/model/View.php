@@ -39,6 +39,6 @@ class View
             require $file;
             return ob_get_clean();
         }
-        header('Location: index.php?action=notFound');
+        header('Location: ../templates/error_404.php'); 
     }
 }
