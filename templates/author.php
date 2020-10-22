@@ -1,7 +1,7 @@
 <div class="card" style="width: 18rem;">
 
 <h3 class="card-title">L'auteur</h3>
-    <img src="../public/img/JeanForteroche.png" class="card-img-top">
+    <img src="../public/img/JeanForteroche.png" class="card-img-top" alt="Jean Forteroche">
     
     <div class="card-body">
         

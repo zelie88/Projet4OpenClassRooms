@@ -8,7 +8,7 @@
             <em>le <?= htmlspecialchars($article->getCreationDate());?></em>
         </h2>
         <div id="article" class="card-body">
-            <p><?= $article->getContent();?></p>
+            <?= $article->getContent();?>
         </div>
 
         <div class="actions">
@@ -62,7 +62,7 @@
                 ?>
                 <div id="comment">
                 <h4><?= htmlspecialchars($comment->getAuthor());?></h4>
-                <p><?= htmlspecialchars($comment->getComment());?></p>
+                <?= htmlspecialchars($comment->getComment());?>
                 <p>Posté le <?= htmlspecialchars($comment->getCommentDate());?></p>
                 <?php
                 if($comment->isFlag()) {

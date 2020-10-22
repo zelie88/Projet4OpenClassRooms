@@ -52,7 +52,7 @@
 
                 </h2>
                 <div class="card-body">
-                    <p><?= substr($article->getContent(), 0, 450);?></p>
+                    <?= substr($article->getContent(), 0, 450);?>
                     <?php
                     if(strlen($article->getContent()) > 450) {
                         ?>
